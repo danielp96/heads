@@ -19,6 +19,8 @@ tpm2-tools_hash := c0b402f6a7b3456e8eb2445211e2d41c46c7e769e05fe4d8909ff64119f7a
 
 # we have ESYS 3.0, but it doesn't figure that out on its own
 tpm2-tools_configure := ./bootstrap && ./configure \
+	CFLAGS="-g0 -Os"  \
+	LDFLAGS="-s" \
 	$(CROSS_TOOLS) \
 	--host $(MUSL_ARCH)-elf-linux \
 	--prefix "/" \
