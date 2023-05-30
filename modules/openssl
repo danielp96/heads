@@ -14,8 +14,8 @@ LIBGCC_DIR := $(dir $(shell $(heads_cc) -print-libgcc-file-name))
 # and SM3.
 openssl_configure := \
 	$(CROSS_TOOLS) \
-	CFLAGS="-Os" \
-	LDFLAGS="-L$(LIBGCC_DIR)" \
+	CFLAGS="-g0 -Os"  \
+	LDFLAGS="-s -L$(LIBGCC_DIR)" \
 	./Configure \
 		--prefix="/" \
 		no-tests \
