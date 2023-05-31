@@ -9,6 +9,8 @@ tpm2-tss_hash := 48305e4144dcf6d10f3b25b7bccf0189fd2d1186feafd8cd68c6b17ecf0d791
 
 tpm2-tss_configure := aclocal && automake --add-missing && autoreconf -fi \
 	&& ./configure \
+	CFLAGS="-g0 -Os"  \
+	LDFLAGS="-s" \
 	$(CROSS_TOOLS) \
 	--host $(MUSL_ARCH)-elf-linux \
 	--prefix "/" \

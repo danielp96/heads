@@ -1,5 +1,14 @@
 --- a/configure.ac	2022-05-21 14:40:59.686470575 +0800
 +++ b/configure.ac	2022-05-21 14:41:21.406671435 +0800
+@@ -4,7 +4,7 @@
+ # All rights reserved.
+ 
+ AC_INIT([tpm2-tss],
+-        [m4_esyscmd_s([git describe --tags --always --dirty])],
++        [3.2.0],
+         [https://github.com/tpm2-software/tpm2-tss/issues],
+         [],
+         [https://github.com/tpm2-software/tpm2-tss])
 @@ -488,17 +488,6 @@ AM_CONDITIONAL(SYSD_SYSUSERS, test "x$sy
  AC_CHECK_PROG(systemd_tmpfiles, systemd-tmpfiles, yes)
  AM_CONDITIONAL(SYSD_TMPFILES, test "x$systemd_tmpfiles" = "xyes")
